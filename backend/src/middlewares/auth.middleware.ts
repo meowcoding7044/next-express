@@ -1,16 +1,16 @@
 import { Request, Response, NextFunction } from "express";
-import { verify } from "../jwt";
+import { verifyAccess } from "../jwt";
+
 export function authMiddleware(
   req: Request,
   res: Response,
   next: NextFunction
 ) {
-  const h = (req.headers.authorization as string) || "";
-  const token = h.startsWith("Bearer ") ? h.slice(7) : null;
+  const token = (req as any).cookies?.access_token as string | undefined;
   if (!token)
     return res.status(401).json({ success: false, error: "Unauthorized" });
   try {
-    const payload = verify(token as string);
+    const payload = verifyAccess(token as string) as any;
     (req as any).user = payload;
     next();
   } catch (e) {

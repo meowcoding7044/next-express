@@ -1,0 +1,26 @@
+[
+  {
+    "id": "p1",
+    "name": "Widget",
+    "count": 10,
+    "price": 9.99,
+    "groupType": "gadget",
+    "status": "active"
+  },
+  {
+    "id": "p2",
+    "name": "Gizmo",
+    "count": 5,
+    "price": 19.99,
+    "groupType": "gadget",
+    "status": "active"
+  },
+  {
+    "id": "p3",
+    "name": "Asus",
+    "count": 50,
+    "price": 19.99,
+    "groupType": "gadget",
+    "status": "active"
+  }
+]
